@@ -22,17 +22,20 @@
     }
 
     function getEmployes($id_dept) {
-        $sql = "SELECT * FROM dept_emp 
-        JOIN employees 
-        ON dept_emp.emp_no = employees.emp_no
-        WHERE dept_emp.dept_no = '%s' AND dept_emp.to_date = '9999-01-01'
-        ORDER BY employees.first_name";
+        $sql = "SELECT * FROM v_emp_lib
+        WHERE dept_no = '%s' AND to_date = '9999-01-01'
+        ORDER BY first_name";
         $sql = sprintf($sql, $id_dept);
+        //echo $sql;
         $data = [];
         $resultat = mysqli_query(dbconnect(), $sql);
         while($data[] = mysqli_fetch_assoc($resultat));
         unset($data[count($data)-1]);
         return $data;
+    }
+
+    function getEmployesInfo($emp_no) {
+
     }
 
 ?>

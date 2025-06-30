@@ -2,3 +2,9 @@ CREATE OR REPLACE VIEW v_dept_manager_lib AS SELECT dept_manager.*, departments.
 employees.first_name, employees.last_name, employees.gender, employees.birth_date, employees.hire_date
 FROM dept_manager JOIN departments ON dept_manager.dept_no = departments.dept_no
 JOIN employees ON dept_manager.emp_no = employees.emp_no;
+
+CREATE OR REPLACE VIEW v_emp_lib AS SELECT employees.*, departments.dept_name, departments.dept_no, dept_emp.from_date, dept_emp.to_date,
+titles.title, titles.from_date as from_date_title, titles.to_date as to_date_title FROM employees 
+JOIN dept_emp ON dept_emp.emp_no = employees.emp_no
+JOIN departments ON dept_emp.dept_no = departments.dept_no
+JOIN titles ON titles.emp_no = employees.emp_no;
