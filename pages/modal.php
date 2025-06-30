@@ -16,10 +16,20 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <?php 
-        if($page != null) {
-            include($page.".php"); 
-        }
-    ?>
+    <header>
+        <nav class="bg-light p-2">
+            <a href="#" class="navbar-brand ">
+                <h1>Indra</h1>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <?php 
+            if($page != null) {
+                include($page.".php"); 
+            }
+        ?>
+    </main>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
