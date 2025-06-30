@@ -1,0 +1,17 @@
+/* div {
+    border: 1px solid black;
+} */
+
+th, td {
+    height: 75px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(33, 39, 88);
+    color: white;
+}
+
+.odd td {
+    background-color: rgb(223, 208, 247);
+}
