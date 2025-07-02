@@ -35,7 +35,24 @@
     }
 
     function getEmployesInfo($emp_no) {
+        $sql = "select * from v_emp_lib where emp_no = '%s'";
+        $sql = sprintf($sql, $emp_no);
+        // echo $sql;
+        $data = array();
+        $resultat = mysqli_query(dbconnect(), $sql);
+        while($data[] = mysqli_fetch_assoc($resultat));
+        unset($data[count($data)-1]);
+        return $data;
+    }
 
+    function getSalaryEmploi($emp_no){
+        $sql = "select * from v_salary_emploi where emp_no='%s'";
+        $sql = sprintf($sql, $emp_no);
+        $data = [];
+        $resultat = mysqli_query(dbconnect(), $sql);
+        while($data[] = mysqli_fetch_assoc($resultat));
+        unset($data[count($data)-1]);
+        return $data;
     }
 
 ?>
