@@ -16,3 +16,13 @@ th {
     background-color: rgb(223, 208, 247);
 }
 
+.btn-gradient {
+    background: linear-gradient(to right, purple, blue);
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-gradient:hover {
+    transform: scale(1.1);
+    color: white;
+}
