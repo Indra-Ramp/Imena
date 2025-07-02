@@ -3,7 +3,7 @@ employees.first_name, employees.last_name, employees.gender, employees.birth_dat
 FROM dept_manager JOIN departments ON dept_manager.dept_no = departments.dept_no
 JOIN employees ON dept_manager.emp_no = employees.emp_no;
 
-CREATE OR REPLACE VIEW v_emp_lib AS SELECT employees.*, departments.dept_name, departments.dept_no, dept_emp.from_date, dept_emp.to_date, titles,title 
+CREATE OR REPLACE VIEW v_emp_lib AS SELECT employees.*, departments.dept_name, departments.dept_no, dept_emp.from_date, dept_emp.to_date, titles.title 
 FROM employees 
 JOIN dept_emp ON dept_emp.emp_no = employees.emp_no
 JOIN departments ON dept_emp.dept_no = departments.dept_no;
