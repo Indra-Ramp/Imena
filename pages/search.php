@@ -9,7 +9,9 @@
 
 <div class="container">
     <div class="pagination mx-auto mb-3 col-6 d-flex justify-content-between">
-        <a href="modal.php?page=search&numero=<?php echo $numero - 1; ?>&section=20">Previous</a>
+        <a class="" <?php echo $numero > 1 ? 'href="modal.php?page=search&numero='.($numero - 1).'&section=20"' : ''?>>
+            <button class="btn btn-<?php echo $numero == 1 ? 'secondary' : 'success'?>" <?php echo $numero == 1 ? "disabled" : ''; ?>>Previous</button>
+        </a>
         <?php for($i = 0; $i < count($pagination); $i++) {
             echo $pagination[$i][1] ? '<a href="modal.php?page=search&numero='.$pagination[$i][0].'&section='.$section.'">' : '';
             echo $pagination[$i][0];

@@ -22,8 +22,8 @@
     }
 
     function getEmployes($id_dept) {
-        $sql = "SELECT * FROM v_emp_lib
-        WHERE dept_no = '%s' AND to_date = '9999-01-01'
+        $sql = "SELECT * FROM v_emp_dept_current
+        WHERE dept_no = '%s'
         ORDER BY first_name";
         $sql = sprintf($sql, $id_dept);
         //echo $sql;
@@ -47,7 +47,7 @@
             $ret[0][1] = true;
             $ret[1][0] = $numero >= 5 ? "..." : '';
             $ret[1][1] = false;
-            $start = $numero >= 2 ? $numero - 2 : 2;
+            $start = $numero >= 4 ? $numero - 2 : 2;
             $i = 2;
             for($i = 2; $i <= 6; $i++) {
                 $ret[$i][0] = $start;
@@ -67,8 +67,7 @@
         $emp_req = ' AND first_name LIKE "%'.$emp.'%" OR last_name LIKE "%'.$emp.'%"';
         $age_req = ' AND TIMESTAMPDIFF(YEAR, birth_date, CURDATE()) BETWEEN %s AND %s';
         $age_req = sprintf($age_req, $min, $max);
-        $sql = "SELECT * FROM v_emp_lib WHERE 1 = 1 AND to_date = '9999-01-01'".$dept_req.$emp_req.$age_req." LIMIT %s, %s";
-        $sql = sprintf($sql, $start, $section);
+        $sql = "SELECT * FROM v_emp_lib WHERE 1 = 1".$dept_req.$emp_req.$age_req." LIMIT ".$start.", ".$section;
         $result = mysqli_query(dbconnect(), $sql);
         while($data[] = mysqli_fetch_assoc($result));
         unset($data[count($data) - 1]);
