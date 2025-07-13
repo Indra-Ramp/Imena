@@ -13,6 +13,7 @@
         </tr>
         <?php  
         $i = 0;
+        
         foreach ($groupEmploi as $value){?>
         <tr class="m-5 p-5 <?php echo $i % 2 == 0 ? 'odd' : 'inodd'; ?>">  
             <td><?php echo $value['c_male'];?></td>

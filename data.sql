@@ -33,5 +33,5 @@ join titles t on e.emp_no = t.emp_no where gender = "F" group by title;
 
 CREATE OR REPLACE VIEW v_group_emploi as select c_male, c_female, title from 
 v_title_emp join v_male on v_title_emp.e_no = v_male.male_no 
-join v_female on v_male.t_male=v_female.t_female group by title;
+join v_female on v_male.t_male=v_female.t_female group by title ;
 

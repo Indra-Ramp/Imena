@@ -133,6 +133,7 @@
         while($data[] = mysqli_fetch_assoc($resultat));
         unset($data[(count($data))-1]);
         return $data;
+        
     }
 
 ?>

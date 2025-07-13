@@ -19,7 +19,6 @@
             <td>
                 <a href="modal.php?page=fiche_emp&emp_no=<?php echo $value['emp_no']; ?>" class="text-decoration-none text-black">
                         <?php echo $value['first_name']?>
-                        
                 </a>
             </td>
             <td>

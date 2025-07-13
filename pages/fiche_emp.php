@@ -22,6 +22,7 @@
         <p>Departement : <?= $value['dept_name'];?></p>
         <p>Hire date : <?= $value['hire_date'];?></p>
         <p>Start of contract : <?= $value['from_date'];?></p>
+        
     <?php } ?>
 
     <h1 class="text-start text-black">Historique de salaires</h1>
