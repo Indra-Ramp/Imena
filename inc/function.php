@@ -35,11 +35,7 @@
     }
 
     function getEmployesInfo($emp_no) {
-<<<<<<< HEAD
-        $sql = "select * from v_salary_emploi_dept where emp_no = '%s' AND s_date = '9999-01-01'";
-=======
         $sql = "select * from v_emp_lib where emp_no = '%s'";
->>>>>>> abdf95d1132552402c72baf16f50bfd7c67f1816
         $sql = sprintf($sql, $emp_no);
         // echo $sql;
         $data = array();
@@ -48,24 +44,13 @@
         unset($data[count($data)-1]);
         return $data;
     }
-<<<<<<< HEAD
+
 
     function getHistory($emp_no){
         $sql = "select * from v_salary_emploi_dept where emp_no = '%s'";
         $sql = sprintf($sql, $emp_no);
         // echo $sql;
         $data = array();
-        $resultat = mysqli_query(dbconnect(), $sql);
-        while($data[] = mysqli_fetch_assoc($resultat));
-        unset($data[count($data)-1]);
-        return $data;
-=======
->>>>>>> abdf95d1132552402c72baf16f50bfd7c67f1816
-
-    function getSalaryEmploi($emp_no){
-        $sql = "select * from v_salary_emploi where emp_no='%s'";
-        $sql = sprintf($sql, $emp_no);
-        $data = [];
         $resultat = mysqli_query(dbconnect(), $sql);
         while($data[] = mysqli_fetch_assoc($resultat));
         unset($data[count($data)-1]);

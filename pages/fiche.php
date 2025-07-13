@@ -27,8 +27,6 @@
                     <?php echo $value['last_name']; ?>        
                 </a>
             </td>
-                
-                
             </tr>
         <?php $i++;
         } ?>

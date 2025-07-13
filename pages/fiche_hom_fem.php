@@ -11,12 +11,16 @@
             <th>Nombre de femmes</th>
             <th>Emplois</th>
         </tr>
-        <?php foreach ($groupEmploi as $value){?>
+        <?php  
+        $i = 0;
+        foreach ($groupEmploi as $value){?>
         <tr class="m-5 p-5 <?php echo $i % 2 == 0 ? 'odd' : 'inodd'; ?>">  
-            <td><?php echo $value['c_female'];?></td>
+            <td><?php echo $value['c_male'];?></td>
             <td><?php echo $value['c_female'];?></td>
             <td><?php echo $value['title'];?></td>
-    <?php $i++;?>
-    <?php }?>
+
+        </tr>
+        <?php $i++;
+        } ?>
     </table>
 </div>
