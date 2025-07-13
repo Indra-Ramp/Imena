@@ -19,7 +19,7 @@
     <header>
         <nav class="bg-light p-2 navbar bg-body-tertiary">
             <a href="modal.php?page=liste" class="navbar-brand ">
-                <h1>Indra</h1>
+                <h1>Imena</h1>
             </a>
             <button class="btn btn-gradient" data-bs-toggle="offcanvas" data-bs-target="#search">Search</button>
             <div class="offcanvas offcanvas-end" id="search">

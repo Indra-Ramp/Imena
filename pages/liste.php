@@ -3,12 +3,15 @@
     
 $dept = getNameToDepartments();
 
+
 ?>
 <div class="container py-4 vh-100">
+    <h1 class="text-center text-black m-5">Listes des Departements</h1>
     <table class="col-12">
         <tr>
             <th>Department Name</th>
             <th>Manager's Name</th>
+            <th>Nombre d'employees</th>
         </tr>
         <?php 
         $i = 0;
@@ -21,8 +24,12 @@ $dept = getNameToDepartments();
                     </a>
                 </td>
                 <td><?php echo $value['first_name']." ".$value['last_name']; ?></td>
-            </tr>
-        <?php $i++;
-        } ?>
+                <td><?php echo $value['c_emp_dept'];?></td>
+                </tr>
+                
+        <?php $i++; ?>
+        <?php }?>
+        
     </table>
+    <a href="modal.php?page=fiche_hom_fem">Fiche hommes et femmes</a>
 </div>
