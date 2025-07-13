@@ -3,11 +3,16 @@ employees.first_name, employees.last_name, employees.gender, employees.birth_dat
 FROM dept_manager JOIN departments ON dept_manager.dept_no = departments.dept_no
 JOIN employees ON dept_manager.emp_no = employees.emp_no;
 
+<<<<<<< HEAD
 CREATE OR REPLACE VIEW v_emp_lib AS SELECT employees.*, departments.dept_name, departments.dept_no, dept_emp.from_date, dept_emp.to_date
+=======
+CREATE OR REPLACE VIEW v_emp_lib AS SELECT employees.*, departments.dept_name, departments.dept_no, dept_emp.from_date, dept_emp.to_date 
+>>>>>>> abdf95d1132552402c72baf16f50bfd7c67f1816
 FROM employees 
 JOIN dept_emp ON dept_emp.emp_no = employees.emp_no
 JOIN departments ON dept_emp.dept_no = departments.dept_no;
 
+<<<<<<< HEAD
 CREATE OR REPLACE VIEW v_emp_dept_current AS SELECT * FROM v_emp_lib
 WHERE to_date = '9999-01-01';
 
@@ -31,3 +36,6 @@ join titles t on e.emp_no = t.emp_no where gender = "F" group by title;
 CREATE OR REPLACE VIEW v_group_emploi as select * from 
 v_title_emp join v_male on v_title_emp.e_no = v_male.male_no 
 join v_female on v_male.t_male=v_female.t_female;
+=======
+CREATE OR REPLACE VIEW v_salary_emploi as select s.salary, t.title, e.* from salaries s join employees e on s.emp_no = e.emp_no join titles t on e.emp_no=t.emp_no;
+>>>>>>> abdf95d1132552402c72baf16f50bfd7c67f1816
